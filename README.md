@@ -28,7 +28,7 @@ This is a complete description of the Arbiter API.
 ### Message Format
 At the heart of Abriter is the message format. A message can be any format but cannot contain whitespave, commas, or asterisk. Each of these have special meaning for subscribers. A structure like `a/b/c` is recommended by convention to allow messages to be categorized.
 
-A subscriber can end their message with an asterisk (*). This message format will match any published message that has the same subscribers message format until the asterisk. For example `email/*` will match `email/new` and `email/send`. This can be useful for handling all messages of a certain component or category. If you take care when naming your messages, using wildcards can help avoid subscribing to multiple individual messages and needing to update as new messages are added.
+A subscriber can end their message with an asterisk (\*). This message format will match any published message that has the same subscribers message format until the asterisk. For example `email/*` will match `email/new` and `email/send`. This can be useful for handling all messages of a certain component or category. If you take care when naming your messages, using wildcards can help avoid subscribing to multiple individual messages and needing to update as new messages are added.
 
 Subscribers can also subscribe to multiple evens by seperating them by a comma and a space.
 

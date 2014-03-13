@@ -1,5 +1,5 @@
 {
-  "name": "subput-arbiter",
+  "name": "subpup-arbiter",
   "version": "v1.0.0",
   "description": "Arbiter.js is a light-weight, library-agnostic javascript implementation of the pub/sub pattern",
   "keywords": ["arbiter", "sub", "pub", "decouple"],

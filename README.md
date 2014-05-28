@@ -1,8 +1,8 @@
 Arbiter-Node
 ============
 
-AbiterJS was created by [Matt Kruse](http://www.mattkruse.com). I take no
-credit for creating this work.
+ArbiterJS was created by [Matt Kruse](http://www.mattkruse.com). I take no
+credit for this work.
 
 [Arbiter.js](http://www.arbiterjs.com) is a light-weight, library-agnostic JavaScript implementation of the [pub/sub pattern](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern), written by Matt Kruse. It allows objects on your page to be de-coupled, and communicate with each other through messages. This leads to a cleaner, more easily understood design, and easier maintenance.
 

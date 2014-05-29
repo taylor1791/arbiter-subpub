@@ -9,6 +9,7 @@ credit for this work.
 For example, if the user changes a value on one part of the page, it can publish a message saying which action was taken. Other parts of the page can subscribe to that action, and do something when it happens. But the first interaction doesn't have to know anything about the second. It just announces what happened, and anyone who cares can act on it.
 
 ##Example
+    var Arbiter = require('arbiter-subpub');
 
     // I want to do something when new mail arrives
     Arbiter.subscribe("email/new", mail_arrival);

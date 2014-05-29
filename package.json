@@ -1,12 +1,16 @@
 {
-  "name": "subpup-arbiter",
+  "name": "arbiter-subpub",
   "version": "v1.0.0",
   "description": "Arbiter.js is a light-weight, library-agnostic javascript implementation of the pub/sub pattern",
   "keywords": ["arbiter", "sub", "pub", "decouple"],
   "license": "Public Domain",
+  "homepage": "http://arbiterjs.com/"
   "author": {
     "name": "Matt Kruse"
   },
+  "contributers": [
+    { "name": "Taylor Everding", "email": "everding.taylor@gmail.com"}
+  ],
   "repo": {
     "type": "git",
     "url": "https://github.com/taylor1791/Arbiter-Node"

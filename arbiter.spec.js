@@ -276,4 +276,23 @@ describe( 'this.arbiter', function() {
 
   } );
 
+  describe( 'guard against regressions', function() {
+
+    it( 'invokes higher priority wildcard subscriptions before lower priority non-wildcard #3', function() {
+      var
+        spy1 = jasmine.createSpy().and.callFake( function() {
+          expect( spy2 ).not.toHaveBeenCalled();
+        } ),
+        spy2 = jasmine.createSpy();
+
+      this.arbiter.subscribe( 'msg/*', { priority: 1 }, spy1 );
+      this.arbiter.subscribe( 'msg/name', spy2 );
+      this.arbiter.publish( 'msg/name' );
+
+      expect( spy1 ).toHaveBeenCalled();
+      expect( spy2 ).toHaveBeenCalled();
+    } );
+
+  } );
+
 } );

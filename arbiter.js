@@ -32,6 +32,10 @@ Arbiter.js
 
   // This is where the real arbiter begins
   return (function () {
+    var subscription_compare = function(a,b) {
+      return (a.p>b.p?-1:a.p==b.p?0:1);
+    };
+
     var create_arbiter = function () {
       var subscriptions = {};
       var wildcard_subscriptions = {};
@@ -39,8 +43,8 @@ Arbiter.js
       var id_lookup = {};
       var new_id = 1;
       return {
-        'version':'1.0'
-        ,'updated_on':'2011-12-19'
+        'version':'1.0.1'
+        ,'updated_on':'2015-05-23'
         ,'create': function() { return create_arbiter(); }
         ,'subscribe': function() {
           var msg, messages, subscription_list, persisted_subscription_list, subscription, func, options={}, context, wildcard=false, priority=0, id, return_ids=[];
@@ -78,9 +82,7 @@ Arbiter.js
             id_lookup[id] = subscription;
             subscription_list.push ( subscription );
             // Sort the list by priority
-            subscription_list = subscription_list.sort( function(a,b) {
-              return (a.p>b.p?-1:a.p==b.p?0:1);
-            } );
+            subscription_list = subscription_list.sort( subscription_compare );
             // Put it back in after sorting
             if (wildcard) {
               wildcard_subscriptions[msg] = subscription_list;
@@ -116,6 +118,8 @@ Arbiter.js
               subscription_list = subscription_list.concat( wildcard_subscriptions[wildcard_msg] );
             }
           }
+          // sort the list according to priority since wildacard and non-wildcards are now mixed
+          subscription_list.sort( subscription_compare );
           if (options.persist===true) {
             if (!persistent_messages[msg]) {
               persistent_messages[msg] = [];

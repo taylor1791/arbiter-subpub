@@ -2,17 +2,32 @@
   "name": "arbiter-subpub",
   "version": "v1.0.0",
   "description": "Arbiter.js is a light-weight, library-agnostic javascript implementation of the pub/sub pattern",
-  "keywords": ["arbiter", "sub", "pub", "decouple"],
+  "keywords": [
+    "arbiter",
+    "sub",
+    "pub",
+    "decouple"
+  ],
   "license": "Public Domain",
   "homepage": "http://arbiterjs.com/",
   "author": {
     "name": "Matt Kruse"
   },
   "contributers": [
-    { "name": "Taylor Everding", "email": "everding.taylor@gmail.com"}
+    {
+      "name": "Taylor Everding",
+      "email": "everding.taylor@gmail.com"
+    }
   ],
-  "repo": {
+  "main": "arbiter.js",
+  "repository": {
     "type": "git",
-    "url": "https://github.com/taylor1791/Arbiter-Node"
+    "url": "https://github.com/taylor1791/Arbiter-SubPub"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.32",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4"
   }
 }

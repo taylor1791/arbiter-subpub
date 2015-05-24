@@ -42,8 +42,11 @@ Arbiter.js
       var persistent_messages = {};
       var id_lookup = {};
       var new_id = 1;
+      var on_error = function( err ) {
+        if( console && console.warn ) { console.warn( err ) }
+      };
       return {
-        'version':'1.0.1'
+        'version':'1.1.0'
         ,'updated_on':'2015-05-23'
         ,'create': function() { return create_arbiter(); }
         ,'subscribe': function() {
@@ -155,6 +158,7 @@ Arbiter.js
             }
             catch(e) {
               overall_result = false;
+              on_error.call( subscriber.self, e, data, msg, internal_data )
             }
           }
           return overall_result;
@@ -174,6 +178,10 @@ Arbiter.js
              return true;
           }
           return false;
+        }
+
+        ,'onError': function( f ) {
+          on_error = f;
         }
 
       };

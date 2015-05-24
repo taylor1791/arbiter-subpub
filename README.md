@@ -31,7 +31,7 @@ At the heart of Abriter is the message format. A message can be any format but c
 
 A subscriber can end their message with an asterisk (\*). This message format will match any published message that has the same subscribers message format until the asterisk. For example `email/*` will match `email/new` and `email/send`. This can be useful for handling all messages of a certain component or category. If you take care when naming your messages, using wildcards can help avoid subscribing to multiple individual messages and needing to update as new messages are added.
 
-Subscribers can also subscribe to multiple evens by seperating them by a comma and a space.
+Subscribers can also subscribe to multiple evens by separating them by a comma and a space.
 
     Arbiter.subscribe( 'component/msg, component/msg2', function() { } );
 
@@ -93,6 +93,12 @@ This creates a separate Arbiter instance. If you want to have different message 
 
     var MyController = Arbiter.create()
 
+#### Arbiter.onError()
+This function sets the error handling function. When a subscriber throws a javascript exception this function executes. The default implementation warns the user. The this value is the same as the subscriber that threw.
+
+   Arbiter.onError( function( err, data, msg, internal_data ) {
+     // custom notification.
+   } );
+
 ## License
 This work is in the public domain and may be used in any way, for any purpose, without restriction.
-

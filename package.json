@@ -1,6 +1,6 @@
 {
   "name": "arbiter-subpub",
-  "version": "v1.0.1",
+  "version": "v1.1.0",
   "description": "Arbiter.js is a light-weight, library-agnostic javascript implementation of the pub/sub pattern",
   "keywords": [
     "arbiter",

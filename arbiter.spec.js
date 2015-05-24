@@ -39,11 +39,25 @@ describe( 'this.arbiter', function() {
     } );
 
     it( 'returns false if a subscriber throws', function() {
+      this.arbiter.onError( function() {} ); // silence the warning
       this.arbiter.subscribe( 'msg', function() {
-          throw new Error( 'error' );
+        throw new Error( 'error' );
       } );
 
       expect( this.arbiter.publish( 'msg' ) ).toBe( false );
+    } );
+
+    it( 'executes the on error function if a subscriber throws', function() {
+      var spy = jasmine.createSpy( 'error function' );
+
+      this.arbiter.onError( spy );
+
+      this.arbiter.subscribe( 'msg', function() {
+        throw new Error( 'error' );
+      } );
+      this.arbiter.publish( 'msg' );
+
+      expect( spy ).toHaveBeenCalled();
     } );
 
     it( 'does not publish to other topics', function() {

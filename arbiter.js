@@ -47,7 +47,7 @@ Arbiter.js
       };
       return {
         'version':'1.1.0'
-        ,'updated_on':'2015-05-23'
+        ,'updated_on':'2015-05-27'
         ,'create': function() { return create_arbiter(); }
         ,'subscribe': function() {
           var msg, messages, subscription_list, persisted_subscription_list, subscription, func, options={}, context, wildcard=false, priority=0, id, return_ids=[];
@@ -97,7 +97,7 @@ Arbiter.js
 
             // Check to see if there are any persistent messages that need
             // to be fired immediately
-            if (!options.persist && persistent_messages[msg]) {
+            if (options.persist !== false && persistent_messages[msg]) {
               persisted_subscription_list = persistent_messages[msg];
               for (var j=0; j<persisted_subscription_list.length; j++) {
                 subscription.f.call( subscription.self, persisted_subscription_list[j], {persist:true} );

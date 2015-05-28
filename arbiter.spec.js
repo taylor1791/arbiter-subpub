@@ -133,7 +133,7 @@ describe( 'this.arbiter', function() {
       expect( spy ).toHaveBeenCalled();
     } );
 
-    xit( 'allows late subscribers to ignore persisted message', function() {
+    it( 'allows late subscribers to ignore persisted message', function() {
       var spy = jasmine.createSpy();
 
       this.arbiter.publish( 'msg', null, { persist: true } );

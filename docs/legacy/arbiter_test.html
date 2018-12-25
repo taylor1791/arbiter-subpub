@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="Arbiter.js"></script>
+<script>
+/*
+Arbiter.subscribe('button/1',function(){ 
+	$('#d1')[0].innerHTML += "Button 1 Clicked<br>";
+});
+Arbiter.subscribe('button/2',function(){ 
+	$('#d2')[0].innerHTML += "Button 2 Clicked<br>";
+});
+Arbiter.subscribe('button/3',function(){ 
+	$('#d3')[0].innerHTML += "Button 3 Clicked<br>";
+});
+*/
+// Async test
+/*
+function test_async() {
+	Arbiter.publish('async',null,{async:true});
+	alert("Message has been dispatched");
+}
+Arbiter.subscribe('async',{priority:-10},function(x,y,data){ data.str+=" -10 "; alert('priority -10:'+data.str); });
+Arbiter.subscribe('async',function(x,y,data){ data.str+=" default "; alert('priority default:'+data.str); });
+Arbiter.subscribe('async',{priority:10},function(x,y,data){ data.str = " 10 "; alert('priority 10:'+data.str); });
+*/
+
+/*
+Arbiter.subscribe('test2',{priority:-10},function(){ alert(-10); });
+Arbiter.subscribe('test2',function(){ alert(0); });
+Arbiter.subscribe('test2',{priority:10,async:true},function(){ alert(10); });
+Arbiter.publish('test2');
+*/
+
+var subcontroller = Arbiter.create();
+
+subcontroller.subscribe('test',function(){alert('test')});
+Arbiter.publish('test');
+subcontroller.publish('test');
+
+</script>
+<style>
+div { border:1px solid #ccc; margin:10px; }
+</style>
+</head>
+<body>
+
+<input type="button" value="Button 1" onclick="Arbiter.publish('button/1')">
+<input type="button" value="Button 2" onclick="Arbiter.publish('button/2')">
+<input type="button" value="Button 3" onclick="Arbiter.publish('button/3')">
+<input type="button" value="async" onclick="test_async()">
+
+<div id="d1"></div>
+
+<div id="d2"></div>
+
+<div id="d3"></div>
+
+
+</body>
+</html>

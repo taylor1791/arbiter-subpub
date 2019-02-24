@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Promissory Arbiter</title>
+    <meta name="description" content="An asynchronous, hierarchical, topic-based, promissory implementation of the pub-sub pattern">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="./style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser.
+        Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <header class="hero">
+      <nav class="nav-container">
+        <div class="logo">Arbiter</div>
+        <ul class="main-nav">
+          <li class="main-nav__nav-item--active main-nav__nav-item">
+            <a class="main-nav__link" href="/">Home</a>
+          </li>
+
+          <li class="main-nav__nav-item">
+            <a class="main-nav__link" href="#docs">Docs</a>
+          </li>
+
+          <li class="main-nav__nav-item">
+            <a class="main-nav__link" href="//github.com/taylor1791/promissory-arbiter">Code</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="banner">
+        <img src="//i770.photobucket.com/albums/xx342/AuraHazeGMK/aerodactyl.png" alt="mascot terry"/>
+
+        <div class="flex-row-sm">
+          <h1 class="hero-title">
+            <span class="secondary-title">Promissory</span>
+            Arbiter
+          </h1>
+
+          <code>
+            <span class="code-token__identifier">Arbiter.subscribe</span><span class="code-token__punctuation">(</span><span class="code-token__string">'code'</span><span class="code-token__punctuation">);</span><br />
+            <span class="code-token__identifier">Arbiter.subscribe</span><span class="code-token__punctuation">(</span><span class="code-token__string">'code.write'</span><span class="code-token__punctuation">);</span><br />
+            <span class="code-token__identifier">Arbiter.publish</span><span class="code-token__punctuation">(</span><span class="code-token__string">'code.write'</span><span class="code-token__punctuation">, </span><span class="code-token__identifier">data</span><span class="code-token__punctuation">)</span><br />
+            &nbsp;&nbsp;<span class="code-token__punctuation">.</span><span class="code-token__keyword">then</span><span class="code-token__punctuation">(</span><span class="code-token__identifier">subscribersComplete</span><span class="code-token__punctuation">);</span>
+          </code>
+        </div>
+
+        <h2 class="hero-oneliner">Decouple your code with an asynchronous, hierarchical, promissory observer.</h2>
+      </div>
+    </header>
+
+    <!-- TODO Download and getting the code -->
+
+    <aside role="complementary"></aside>
+
+    <main id="docs" class="content">
+      <section id="introduction">
+        <!js= data ?>
+        <h3>Testing</h3>
+        <p>Testhign</p>
+      </section>
+    </main>
+
+    <footer></footer>
+
+  </body>
+</html>
